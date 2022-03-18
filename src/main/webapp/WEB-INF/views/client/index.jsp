@@ -10,6 +10,6 @@
 
 <mt:template_client title = "Home">
     <jsp:attribute name="content">
-        <img src="${pageContext.request.contextPath }/resources/client/img/logo.png" alt="Logo" style="width: 40px;">
+
     </jsp:attribute>
 </mt:template_client>

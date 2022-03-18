@@ -11,5 +11,6 @@
 <mt:template_salesman title = "Home">
     <jsp:attribute name="content">
 <h3>Add Product</h3>
+
     </jsp:attribute>
 </mt:template_salesman>

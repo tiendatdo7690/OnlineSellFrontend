@@ -60,14 +60,14 @@
                 </a>
                 <div class="dropdown-menu">
                     <div class="container" style="width: 280px;">
-                        <form method="POST">
+                        <form method="POST" action="${pageContext.request.contextPath}/account/process-login">
                             <div class="form-group">
                                 <label for="txtTenTK">Tên tài khoản:</label>
-                                <input type="text" class="form-control" id="txtTenTK">
+                                <input type="text" class="form-control" id="txtTenTK" name="username">
                             </div>
                             <div class="form-group">
                                 <label for="txtMK">Mật khẩu:</label>
-                                <input type="password" class="form-control" id="txtMK">
+                                <input type="password" class="form-control" id="txtMK" name="pass">
                             </div>
                             <div class="custom-control custom-checkbox mb-2">
                                 <input type="checkbox" class="custom-control-input" id="chkGhiNho" checked>
