@@ -1,11 +1,12 @@
 package com.example.demo.entities;
 
 import com.google.gson.annotations.SerializedName;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 import java.util.List;
 
-public class Product {
+public class ProductRespone {
 
     @SerializedName("id")
     private Long id;
@@ -31,18 +32,20 @@ public class Product {
     @SerializedName("idCategory")
     private Long idCategory;
 
-    @SerializedName("avatar")
-    private File avatar;
+    @SerializedName("price")
+    private Double price;
+
+    @SerializedName("urlFileAvatar")
+    private String urlFileAvatar;
 
     @SerializedName("images")
-    private List<File> images;
+    private List<String> images;
 
 
-
-    public Product() {
+    public ProductRespone() {
     }
 
-    public Product(Long id, String name, String description, int inventoryNumber, Date dateSell, Boolean status, Long idSalesMan, Long idCategory) {
+    public ProductRespone(Long id, String name, String description, int inventoryNumber, Date dateSell, Boolean status, Long idSalesMan, Long idCategory) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -51,6 +54,7 @@ public class Product {
         this.status = status;
         this.idSalesMan = idSalesMan;
         this.idCategory = idCategory;
+
     }
 
     public Long getId() {
@@ -117,33 +121,27 @@ public class Product {
         this.idCategory = idCategory;
     }
 
-    public File getAvatar() {
-        return avatar;
+    public String getUrlFileAvatar() {
+        return urlFileAvatar;
     }
 
-    public void setAvatar(File avatar) {
-        this.avatar = avatar;
+    public void setUrlFileAvatar(String urlFileAvatar) {
+        this.urlFileAvatar = urlFileAvatar;
     }
 
-    public List<File> getImages() {
+    public List<String> getImages() {
         return images;
     }
 
-    public void setImages(List<File> images) {
+    public void setImages(List<String> images) {
         this.images = images;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", inventoryNumber=" + inventoryNumber +
-                ", dateSell=" + dateSell +
-                ", status=" + status +
-                ", idSalesMan=" + idSalesMan +
-                ", idCategory=" + idCategory +
-                '}';
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

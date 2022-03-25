@@ -2,19 +2,26 @@ package com.example.demo.entities;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Category {
+import java.util.Date;
+
+public class Process {
+
     @SerializedName("id")
     private Long id;
 
     @SerializedName("name")
     private String name;
 
-    public Category() {
+    @SerializedName("date")
+    private Date date;
+
+    public Process() {
     }
 
-    public Category(Long id, String name) {
+    public Process(Long id, String name, Date date) {
         this.id = id;
         this.name = name;
+        this.date = date;
     }
 
     public Long getId() {
@@ -33,10 +40,11 @@ public class Category {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "name='" + name + '\'' +
-                '}';
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

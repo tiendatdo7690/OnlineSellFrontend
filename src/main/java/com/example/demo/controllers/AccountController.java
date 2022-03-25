@@ -19,6 +19,9 @@ public class AccountController {
         else if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))){
             return "redirect:/admin/home";
         }
+        else if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_CLIENT"))){
+            return "redirect:/client/home";
+        }
         return "account/index";
     }
 }

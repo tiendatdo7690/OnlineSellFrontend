@@ -13,7 +13,8 @@
     <jsp:attribute name="content">
 <h3>Add Product</h3>
 
-         <s:form method="post" modelAttribute="product" action="${pageContext.request.contextPath}/salesman/saveproduct">
+         <s:form method="post" modelAttribute="product" enctype="multipart/form-data"
+                 action="${pageContext.request.contextPath}/salesman/saveproduct">
 
             <table>
                 <tr>
@@ -59,9 +60,30 @@
                 </tr>
 
                 <tr>
+                    <td>Avatar</td>
+                    <td>
+                        <input type="file" name="avatar1" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Images</td>
+                    <td>
+                        <input type="file" name="images1" multiple = "multiple" />
+                    </td>
+                </tr>
+
+                <tr>
                     <td>&nbsp;</td>
                     <td>
                         <input type="submit" value="Save">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <s:hidden path="idSalesMan"  />
                     </td>
                 </tr>
             </table>

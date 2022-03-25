@@ -7,6 +7,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import sun.plugin.util.PluginSysUtil;
 
 import java.util.List;
 
@@ -17,4 +18,7 @@ public interface CategoryAPI {
 
     @GET("category/findall")
     Call<List<Category>> findAll();
+
+    @GET("category/findallbyname/{name}")
+    Call<List<Category>> findAllByName(@Path("name") String category);
 }

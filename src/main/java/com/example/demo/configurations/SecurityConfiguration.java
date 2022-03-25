@@ -27,12 +27,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/saleman/**").access("hasRole('ROLE_SALE_MAN')")
             .antMatchers("/client/**").access("hasRole('ROLE_CLIENT')")
             .and()
-            .formLogin().loginPage("/")
+            .formLogin().loginPage("/home")
             .loginProcessingUrl("/account/process-login")
             .defaultSuccessUrl("/account/welcome")
             .failureUrl("/account/login?error")
             .usernameParameter("username")
             .passwordParameter("pass")
+            .and()
+            .logout().logoutUrl("/account/logout")
+            .logoutSuccessUrl("/home?logout")
             ;
     }
 
